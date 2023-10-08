@@ -1,0 +1,35 @@
+name: Deploy
+
+# Trigger the workflow on push and 
+# pull request events on the production branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+# Authenticate to the the server via ssh 
+# and run our deployment script 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        env:
+            PPATH: '/home/programNA00/programeoww.id.vn/public_html'
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          envs: PPATH
+          script: 
+            cd $PPATH &&
+            git pull &&
+            bun i &&
+            bun run build &&
+            pm2 restart 0 --update-env
