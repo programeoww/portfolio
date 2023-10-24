@@ -12,14 +12,12 @@
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/react-helmet": "^6.1.8",
     "@types/react-router-hash-link": "^2.4.7",
     "autoprefixer": "^10",
     "eslint": "^8",

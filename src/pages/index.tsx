@@ -4,6 +4,7 @@ import Projects from '@/components/projects'
 import TechStack from '@/components/techStack'
 import Work from '@/components/workExperiences'
 import { Inter } from 'next/font/google'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
@@ -24,6 +25,18 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Portfolio | @programeoww</title>
+        <meta name="description" content="Portfolio of Hieu Ngo Minh" />
+        <meta name="keywords" content="Portfolio, Hieu Ngo Minh, programeoww" />
+        <meta name="author" content="@programeoww" />
+        <link rel="icon" href="./favicon.ico" id="faviconTag" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <meta name="og:title" content="Portfolio | @programeoww" />
+        <meta name="og:description" content="Portfolio of Hieu Ngo Minh" />
+        <meta name="og:type" content="website" />
+        <meta name="og:url" content="https://programeoww.github.io/" />
+      </Head>
       <main
         className={`md:max-w-4xl mx-auto md:pt-5 ${inter.className}`}
       >
