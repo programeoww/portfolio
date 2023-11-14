@@ -94,6 +94,9 @@ function PageImageMin() {
                 link.href = URL.createObjectURL(zipData);
                 link.download = "image-min.zip";
                 link.click();
+                setIsDone(false);
+                dispatchQueue({ type: 'clear' });
+                setFileLength(0);
             }
         })()
     }, [queue, fileLength, isDone]);
@@ -118,7 +121,7 @@ function PageImageMin() {
             </Dropzone>
             <div className="space-y-3">
                 {
-                    queue.reverse().map((image, index) => (
+                    queue.map((image, index) => (
                         <div key={index} className="p-2 flex items-center border border-gray-700 bg-gray-900 rounded-lg space-x-2">
                             <i><svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" fill="currentColor" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg></i>
                             <div className="flex-1 pr-2 space-y-1">
