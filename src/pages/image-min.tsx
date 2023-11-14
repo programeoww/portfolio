@@ -81,7 +81,8 @@ function PageImageMin() {
                 const zip = new JSZip();
                 queue.forEach((item: StateType) => {
                     if(!item.blob) return;
-                    zip.file(item.name, item.blob)
+                    const imageName = item.name.split('.')[0] + '.min.webp';
+                    zip.file(imageName, item.blob)
                 });
     
                 const zipData = await zip.generateAsync({
