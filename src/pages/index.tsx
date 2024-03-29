@@ -6,6 +6,7 @@ import Work from '@/components/workExperiences'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -93,6 +94,10 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Script
+                strategy="lazyOnload"
+                src="https://embed.tawk.to/66047a09a0c6737bd12590f5/1hq0npdg7"
+            />
     </>
   )
 }
