@@ -13,17 +13,30 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
   
         const filePath = files.map(file => file.filepath)
   
-        const buffer = await imagemin(filePath, {
-          plugins: [
+        // const buffer = await imagemin(filePath, {
+        //   plugins: [
+        //       imageminWebp({quality: 50})
+        //   ]
+        // })
+  
+        // const newImage = Buffer.from(buffer[0].data)
+  
+        // res.setHeader('Content-Type', 'image/webp')
+        // res.setHeader('Content-Length', newImage.length)
+        // res.send(newImage)
+
+        //loop and compress 1 file at a time
+        for (let i = 0; i < filePath.length; i++) {
+          const buffer = await imagemin([filePath[i]], {
+            plugins: [
               imageminWebp({quality: 50})
-          ]
-        })
-  
-        const newImage = Buffer.from(buffer[0].data)
-  
-        res.setHeader('Content-Type', 'image/webp')
-        res.setHeader('Content-Length', newImage.length)
-        res.send(newImage)
+            ]
+          })
+          const newImage = Buffer.from(buffer[0].data)
+          res.setHeader('Content-Type', 'image/webp')
+          res.setHeader('Content-Length', newImage.length)
+          res.send(newImage)
+        }
       });
   
       form.on('error', (err) => {
