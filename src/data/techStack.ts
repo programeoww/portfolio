@@ -14,6 +14,8 @@ import {
     SiTailwindcss,
     SiWordpress,
     SiPhp,
+    SiAlpinedotjs,
+    SiSequelize
   } from "react-icons/si";
 
 const techStack = [
@@ -30,8 +32,16 @@ const techStack = [
         icon: SiReact
     },
     {
+        name: "Alpine.js",
+        icon: SiAlpinedotjs
+    },  
+    {
         name: "Next.js",
         icon: SiNextdotjs
+    },
+    {
+        name: "Sequelize",
+        icon: SiSequelize
     },
     {
         name: "Node.js",

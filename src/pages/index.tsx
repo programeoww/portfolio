@@ -3,6 +3,7 @@ import { CheckIcon, GithubIcon } from '@/components/icons'
 import Projects from '@/components/projects'
 import TechStack from '@/components/techStack'
 import Work from '@/components/workExperiences'
+import projectList from '@/data/projects'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -64,7 +65,7 @@ export default function Home() {
                   <CheckIcon className='h-4 w-4' />
                   <span className="inline-block ml-2">Contact Me</span>
                 </button>
-                <div className="space-y-1"><h3 className="font-medium leading-none">1.5 years</h3><p className="text-xs text-gray-400">Experience</p></div>
+                <div className="space-y-1"><h3 className="font-medium leading-none">2 years</h3><p className="text-xs text-gray-400">Experience</p></div>
                 <div className="space-y-1"><h3 className="font-medium leading-none">Ha Noi, Viet Nam 🇻🇳</h3><p className="text-xs text-gray-400">Location</p></div>
               </div>
               <div data-orientation="horizontal" role="none" className="shrink-0 bg-dark-blue h-[1px] w-full"></div>
@@ -75,7 +76,7 @@ export default function Home() {
             </section>
             <div data-orientation="horizontal" role="none" className="shrink-0 bg-dark-blue h-[1px] w-full"></div>
             <section data-hash="projects" className='space-y-5'>
-              <h3 className="text-2xl font-semibold tracking-tight">Projects</h3>
+              <h3 className="text-2xl font-semibold tracking-tight">Projects <span className="text-gray-400 text-sm">({projectList.length})</span></h3>
               <Projects />
             </section>
             <section data-hash="work" className='space-y-5'>
