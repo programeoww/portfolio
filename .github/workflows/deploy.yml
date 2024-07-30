@@ -30,6 +30,6 @@ jobs:
           script: 
             cd $PPATH &&
             git pull &&
-            npm i &&
-            npm run build &&
+            bun i &&
+            bun run build &&
             pm2 restart 0 --update-env

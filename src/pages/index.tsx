@@ -27,6 +27,7 @@ export default function Home() {
 
   return (
     <>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-R7M5WNE6BT"></Script>
       <Head>
         <title>Portfolio | @programeoww</title>
         <meta name="description" content="Portfolio of Hieu Ngo Minh" />
@@ -38,6 +39,16 @@ export default function Home() {
         <meta name="og:description" content="Portfolio of Hieu Ngo Minh" />
         <meta name="og:type" content="website" />
         <meta name="og:url" content="https://programeoww.github.io/" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+    
+              gtag('config', 'G-R7M5WNE6BT');
+          `,
+        }}
+        />
       </Head>
       <main
         className={`md:max-w-4xl mx-auto md:pt-5 ${inter.className}`}
