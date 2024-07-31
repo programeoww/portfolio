@@ -1,5 +1,5 @@
 import axios from "axios";
-import JSZip, { file } from "jszip";
+import JSZip from "jszip";
 import { useEffect, useReducer, useState } from "react";
 import Dropzone from "react-dropzone";
 

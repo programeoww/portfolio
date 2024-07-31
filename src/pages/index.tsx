@@ -106,10 +106,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Script
-                strategy="lazyOnload"
-                src="https://embed.tawk.to/66047a09a0c6737bd12590f5/1hq0npdg7"
-            />
     </>
   )
 }
